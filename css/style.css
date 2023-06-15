@@ -34,18 +34,19 @@ body {
   justify-content: space-between;
   overflow: hidden;
   min-width: 200px;
-  width: 200px;
   background-color: black;
 }
 
 .nav-main-content-container {
-  border: 1px dashed black;
   width: 100%;
-  height: 50%;
 }
 
-.nav-logo {
+.nav-logo-m {
   padding-bottom: 1.5rem;
+}
+
+.nav-logo-small {
+  display: none;
 }
 
 .nav-elements {
@@ -55,7 +56,7 @@ body {
   padding-bottom: .5rem;
 }
 
-.nav-elements img{
+.nav-elements img {
   width: 25px;
   aspect-ratio: 1/1;
 }
@@ -68,7 +69,7 @@ body {
   font-size: 2rem;
 }
 
-.playlist-list div{
+.playlist-section .playlist-name{
   color: rgb(111, 111, 111);
   padding-bottom: .5rem;
 }
@@ -108,7 +109,21 @@ body {
 @media screen and (max-width: 480px) {
 
   .nav-container {
-    width: 70px; /*si può togliere quando aggiungi il contenuto in content-container*/
-    min-width: 70px;
+    min-width: 40px;
+  }
+
+  .nav-elements span,
+  .playlist-section {
+    display: none;
+  }
+
+  .nav-logo-m {
+    display: none;
+  }
+
+  .nav-logo-small {
+    display: block;
+    width: 25px;
+    padding-bottom: 1rem;
   }
 }
