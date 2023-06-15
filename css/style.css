@@ -1,8 +1,20 @@
+/* Classi Generali/Utilities*/
+
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
+
+.color-white {
+  color: white;
+}
+
+.padding-m {
+  padding: 1rem;
+}
+
+/* contenuto principale*/
 
 body {
   display: flex;
@@ -21,14 +33,44 @@ body {
   flex-direction: column;
   justify-content: space-between;
   overflow: hidden;
+  min-width: 200px;
   width: 200px;
-  background-color: red;
+  background-color: black;
 }
 
 .nav-main-content-container {
   border: 1px dashed black;
   width: 100%;
   height: 50%;
+}
+
+.nav-logo {
+  padding-bottom: 1.5rem;
+}
+
+.nav-elements {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+  padding-bottom: .5rem;
+}
+
+.nav-elements img{
+  width: 25px;
+  aspect-ratio: 1/1;
+}
+
+.nav-main-content-container h4 {
+  padding: .5rem 0px;
+}
+
+.fa-square-plus {
+  font-size: 2rem;
+}
+
+.playlist-list div{
+  color: rgb(111, 111, 111);
+  padding-bottom: .5rem;
 }
 
 .nav-footer-container {
@@ -56,8 +98,9 @@ body {
 
 .bottom-bar {
   width: 100%;
-  background-color: black;
+  background-color: rgb(40, 40, 40);
   height: 10vh;
+  min-height: 70px;
   position: fixed;
   bottom: 0;
 }
@@ -65,6 +108,7 @@ body {
 @media screen and (max-width: 480px) {
 
   .nav-container {
-    width: 70px;
+    width: 70px; /*si può togliere quando aggiungi il contenuto in content-container*/
+    min-width: 70px;
   }
 }
