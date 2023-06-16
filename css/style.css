@@ -28,6 +28,7 @@ body {
   display: flex;
 }
 
+/*  Navbar  */
 .nav-container {
   display: flex;
   flex-direction: column;
@@ -114,6 +115,8 @@ body {
   border-radius: 50%;
 }
 
+/* Main content */
+
 .main-content-container {
   flex-grow: 1;
   display: flex;
@@ -122,11 +125,21 @@ body {
 }
 
 .upper-bar-container {
-  height: 100px;
   width: 100%;
-  background-color: blue;
+  background-color: rgb(8, 11, 18);
   overflow: hidden;
+  display: flex;
+  justify-content: flex-end;
 } 
+
+.upgrade-btn {
+  font-size: .7rem;
+  margin: 1rem .3rem;
+  padding: .7rem 3rem;
+  border-radius: 40px;
+  border: 2px solid white;
+  background-color: transparent;
+}
 
 .content-container {
   overflow: auto;
