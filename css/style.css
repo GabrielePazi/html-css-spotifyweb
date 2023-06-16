@@ -39,6 +39,9 @@ body {
 
 .nav-main-content-container {
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
 }
 
 .nav-logo-m {
@@ -69,15 +72,46 @@ body {
   font-size: 2rem;
 }
 
+.playlist-section {  
+  display: flex;
+  flex-direction: column;
+  overflow: hidden; 
+}
+
 .playlist-section .playlist-name{
   color: rgb(111, 111, 111);
   padding-bottom: .5rem;
 }
 
+.playlist-list {
+  overflow: auto;
+}
+
 .nav-footer-container {
   border: 1px dashed black;
   width: 100%;
-  height: 10%;
+  padding: .5rem 1rem;
+}
+
+.nav-footer-container > div {
+  display: flex; 
+  align-items: center;
+  gap: .4rem;
+  padding: .5rem;
+}
+
+.nav-footer-download img, .nav-footer-download span{
+  color: rgb(111, 111, 111);
+} 
+
+.nav-footer-container img {
+  width: 20px;
+  aspect-ratio: 1/1;
+}
+
+.nav-footer-user img {
+  background-color: rgb(124, 124, 124);
+  border-radius: 50%;
 }
 
 .main-content-container {
@@ -91,6 +125,7 @@ body {
   height: 100px;
   width: 100%;
   background-color: blue;
+  overflow: hidden;
 } 
 
 .content-container {
@@ -102,8 +137,6 @@ body {
   background-color: rgb(40, 40, 40);
   height: 10vh;
   min-height: 70px;
-  position: fixed;
-  bottom: 0;
 }
 
 @media screen and (max-width: 480px) {
@@ -125,5 +158,16 @@ body {
     display: block;
     width: 25px;
     padding-bottom: 1rem;
+  }
+
+  .nav-footer-container span,
+  .nav-footer-container hr{
+    display: none;
+  }
+
+  .nav-footer-container > div{
+    justify-content: center;
+    padding: .5rem 0px;
+    width: 25px;
   }
 }
