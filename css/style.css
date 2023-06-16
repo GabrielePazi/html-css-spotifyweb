@@ -14,6 +14,10 @@
   padding: 1rem;
 }
 
+.border-circle {
+  border-radius: 50%;
+}
+
 /* contenuto principale*/
 
 body {
@@ -39,6 +43,7 @@ body {
 }
 
 .nav-main-content-container {
+  margin: 1rem;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -46,6 +51,7 @@ body {
 }
 
 .nav-logo-m {
+  padding-right: 2rem;
   padding-bottom: 1.5rem;
 }
 
@@ -121,7 +127,7 @@ body {
   flex-grow: 1;
   display: flex;
   flex-direction: column;
-  background-color: aqua;
+  background-color: rgb(20, 25, 34);
 }
 
 .upper-bar-container {
@@ -130,11 +136,12 @@ body {
   overflow: hidden;
   display: flex;
   justify-content: flex-end;
+  align-items: center;
+  padding: 1.5rem .5rem;
 } 
 
 .upgrade-btn {
   font-size: .7rem;
-  margin: 1rem .3rem;
   padding: .7rem 3rem;
   border-radius: 40px;
   border: 2px solid white;
@@ -143,6 +150,63 @@ body {
 
 .content-container {
   overflow: auto;
+}
+
+.navigation-menu-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.navigation-menu-element span {
+  color: rgb(121, 124, 128);
+  font-size: .8rem;
+}
+
+.navigation-menu-element hr {
+  margin: auto;
+  height: 3px;
+  background-color: rgb(173, 255, 47);
+  border: none;
+  max-width: 50%;
+  display: none;
+}
+
+.cards-row {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.row-title {
+  padding-bottom: 1rem;
+}
+
+.cards-row p {
+  color: rgb(122, 125, 129);
+  padding: .5rem 0rem;
+}
+
+.cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .5rem;
+}
+
+.card {
+  width: calc((100% / 6) - 1rem);
+  min-width: 80px;
+}
+
+.card img {
+  width: 100%;
+  aspect-ratio: 1/1;
+}
+
+.card h3, .card p {
+  text-align: center;
 }
 
 .bottom-bar {
@@ -155,7 +219,7 @@ body {
 @media screen and (max-width: 480px) {
 
   .nav-container {
-    min-width: 40px;
+    min-width: calc(40px + 1rem);
   }
 
   .nav-elements span,
