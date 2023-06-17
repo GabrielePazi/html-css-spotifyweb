@@ -26,7 +26,7 @@ body {
 }
 
 .main-container {
-  height: 90vh;
+  height: 85vh;
   overflow: hidden;
   background-color: rgb(233, 233, 173);
   display: flex;
@@ -43,8 +43,7 @@ body {
 }
 
 .nav-main-content-container {
-  margin: 1rem;
-  width: 100%;
+  margin: 1rem 0rem 1rem 1rem;
   display: flex;
   flex-direction: column;
   overflow: hidden;
@@ -79,7 +78,7 @@ body {
   font-size: 2rem;
 }
 
-.playlist-section {  
+.playlist-section {
   display: flex;
   flex-direction: column;
   overflow: hidden; 
@@ -211,17 +210,103 @@ body {
 .bottom-bar {
   width: 100%;
   background-color: rgb(40, 40, 40);
-  height: 10vh;
-  min-height: 70px;
+  height: 15vh;
+  min-height: 100px;
+  display: flex;
+  align-items: center;
+  padding: 0rem 1rem;
+  justify-content: space-around;
+  gap: 1rem;
 }
 
-@media screen and (max-width:700px) {
+.bottom-bar > div {
+  flex-basis: calc(100% / 3);
+  flex-shrink: 1;
+}
+
+.bottom-bar-element{
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.bottom-bar-element-left {
+  justify-content: flex-start;
+}
+
+.bottom-bar-element-right {
+  justify-content: flex-end;
+}
+
+.bottom-bar-element img{
+  width: 50px;
+  aspect-ratio: 1/1;
+}
+
+.bottom-bar-element-text {
+  padding-right: 1rem;
+}
+
+.bottom-bar-element-icons {
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+}
+
+.bottom-bar-element-text p, .bottom-bar-element i {
+  color: rgb(135, 135, 135);
+}
+
+.bottom-bar-player {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.music-actions {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+.music-actions .fa-circle-play {
+  font-size: 1.5rem;
+}
+
+.music-bar-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.music-bar {
+  width: 500%;
+  height: 5px;
+  background-color: rgb(90, 90, 90);
+  border-radius: 10px;
+}
+
+.played-music-bar {
+  width: 50%;
+  height: 100%;
+  background-color: rgb(193, 193, 193);
+  border-radius: 10px;
+}
+
+.music-bar.mini-bar {
+  width: 20%;
+}
+
+@media screen and (max-width:1000px) {
   .card {
     width: calc((100% / 4) - 1rem);
   }
 }
 
-@media screen and (max-width:600px) {
+@media screen and (max-width:700px) {
   .card {
     width: calc((100% / 2) - 1rem);
     min-width: 100px;
@@ -229,7 +314,7 @@ body {
 }
 
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 600px) {
 
   .nav-container {
     min-width: calc(40px + 1rem);
