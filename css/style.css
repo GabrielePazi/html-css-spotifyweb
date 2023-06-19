@@ -70,6 +70,22 @@ body {
   aspect-ratio: 1/1;
 }
 
+.nav-container span,
+.nav-container h4,
+.nav-container i {
+  color:rgb(126, 126, 126);
+}
+
+.home, .search, .library {
+  padding-left: 2px;
+  border-left: 3px solid transparent;
+
+}
+
+.home:hover, .search:hover, .library:hover {
+  border-color:rgb(173, 255, 47);
+}
+
 .nav-main-content-container h4 {
   padding: .5rem 0px;
 }
@@ -81,7 +97,11 @@ body {
 .playlist-section {
   display: flex;
   flex-direction: column;
-  overflow: hidden; 
+  overflow: hidden;
+}
+
+.playlist-section h4:first-child {
+  color: white;
 }
 
 .playlist-section .playlist-name{
@@ -91,6 +111,7 @@ body {
 
 .playlist-list {
   overflow: auto;
+  scrollbar-color: red;
 }
 
 .nav-footer-container {
@@ -120,6 +141,19 @@ body {
   border-radius: 50%;
 }
 
+.nav-container span:hover,
+.nav-container h4:hover,
+.nav-container i:hover,
+.playlist-name:hover,
+.playlist-section .nav-elements:hover i, 
+.playlist-section .nav-elements:hover span {
+  color: white;
+}
+
+.nav-footer-user h4 {
+  color: white;
+}
+
 /* Main content */
 
 .main-content-container {
@@ -147,6 +181,10 @@ body {
   background-color: transparent;
 }
 
+.upgrade-btn:hover {
+  transform: scale(1.05);
+}
+
 .content-container {
   overflow: auto;
 }
@@ -162,6 +200,7 @@ body {
 .navigation-menu-element span {
   color: rgb(121, 124, 128);
   font-size: .8rem;
+  padding-bottom: .4rem;
 }
 
 .navigation-menu-element hr {
@@ -169,8 +208,29 @@ body {
   height: 3px;
   background-color: rgb(173, 255, 47);
   border: none;
+  max-width: 0%;
+  border-radius: 5px;
+}
+
+.navigation-menu-element:hover span{
+  color: white;
+}
+
+.navigation-menu-element:hover hr {
+  animation-name: linear-growing;
+  animation-duration: .2s;
+  animation-timing-function: linear;
   max-width: 50%;
-  display: none;
+}
+
+@keyframes linear-growing {
+  0% {
+    max-width: 0%;
+  }
+
+  100% {
+    max-width: 50%;
+  }
 }
 
 .cards-row {
@@ -201,6 +261,34 @@ body {
 .card img {
   width: 100%;
   aspect-ratio: 1/1;
+}
+
+.cards-image {
+  position: relative;
+}
+
+.cards-image .layover-play {
+  display: none;
+}
+
+.cards-image:hover .layover-play {
+  display: inline-block;
+  background-color: rgba(0, 0, 0, 0.5);
+  font-size: 3rem;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+}
+
+.cards-image:hover .layover-play:before {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);  
 }
 
 .card h3, .card p {
@@ -247,10 +335,22 @@ body {
   padding-right: 1rem;
 }
 
+.bottom-bar-element-text > p:hover {
+  cursor: pointer;
+  color: white;
+  text-decoration: underline;
+}
+
 .bottom-bar-element-icons {
   display: flex;
   flex-direction: column;
   gap: .5rem;
+}
+
+.bottom-bar-element-icons > i:hover,
+.bottom-bar-element-right > i:hover {
+  cursor: pointer;
+  color: white;
 }
 
 .bottom-bar-element-text p, .bottom-bar-element i {
@@ -275,6 +375,11 @@ body {
   font-size: 1.5rem;
 }
 
+.music-actions > i:hover {
+  cursor: pointer;
+  transform: scale(1.3);
+}
+
 .music-bar-container {
   display: flex;
   justify-content: center;
@@ -294,6 +399,20 @@ body {
   height: 100%;
   background-color: rgb(193, 193, 193);
   border-radius: 10px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.bar-progress-point {
+  width: 10px;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+}
+
+.bar-progress-point:hover {
+  background-color: white;
+  cursor: pointer;
 }
 
 .music-bar.mini-bar {
@@ -317,7 +436,12 @@ body {
 @media screen and (max-width: 600px) {
 
   .nav-container {
-    min-width: calc(40px + 1rem);
+    min-width: calc(30px + 1rem);
+  }
+
+  .nav-main-content-container {
+    margin-left: .5rem;
+    margin-right: .5rem;
   }
 
   .nav-elements span,
@@ -332,7 +456,8 @@ body {
   .nav-logo-small {
     display: block;
     width: 25px;
-    padding-bottom: 1rem;
+    padding-bottom: .7rem;
+    margin-left: 3px;
   }
 
   .nav-footer-container span,
@@ -344,5 +469,9 @@ body {
     justify-content: center;
     padding: .5rem 0px;
     width: 25px;
+  }
+
+  .nav-footer-user h4 {
+    display: none;
   }
 }
